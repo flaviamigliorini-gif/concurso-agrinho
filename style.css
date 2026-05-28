@@ -1,4 +1,4 @@
-/* Configurações Gerais */
+/* Configurações Gerais e Reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,22 +11,25 @@ body {
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
+    padding-top: 80px; /* Evita que o topo do conteúdo fique escondido sob o menu fixo */
 }
 
 .container {
-    width: 85%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Cabeçalho */
+/* Cabeçalho / Menu Fixo */
 header {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 header .container {
@@ -39,6 +42,7 @@ header .container {
 .logo h1 {
     font-size: 24px;
     color: #2e7d32; /* Verde Agro */
+    font-weight: 700;
 }
 
 .logo h1 span {
@@ -51,14 +55,14 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #555;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -68,7 +72,7 @@ nav ul li a:hover {
 /* Banner Principal (Hero) */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1470') no-repeat center center/cover;
-    height: 100vh;
+    height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +85,7 @@ nav ul li a:hover {
     font-size: 48px;
     margin-bottom: 20px;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .hero-content p {
@@ -91,24 +96,42 @@ nav ul li a:hover {
     margin-right: auto;
 }
 
+/* Botões */
 .btn {
     display: inline-block;
     background-color: #2e7d32;
     color: #fff;
-    padding: 12px 30px;
+    padding: 12px 35px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
     background-color: #1b5e20;
 }
 
-/* Sobre */
+.btn-alt {
+    background-color: #fff;
+    color: #2e7d32;
+    border: none;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-alt:hover {
+    background-color: #e8f5e9;
+    transform: scale(1.02);
+}
+
+/* Seção Sobre */
 .about {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: #fff;
     text-align: center;
 }
@@ -116,12 +139,14 @@ nav ul li a:hover {
 .about h2 {
     font-size: 36px;
     color: #2e7d32;
+    margin-bottom: 5px;
 }
 
 .subtitle {
     color: #777;
     margin-bottom: 40px;
     font-style: italic;
+    font-size: 16px;
 }
 
 .about-text {
@@ -135,9 +160,9 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-/* Pilares */
+/* Seção Pilares */
 .pillars {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: #f1f8e9;
     text-align: center;
 }
@@ -159,16 +184,23 @@ nav ul li a:hover {
     padding: 40px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
 .card h3 {
     color: #33691e;
     margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.card p {
+    color: #666;
+    font-size: 15px;
 }
 
 /* Chamada para Ação (CTA) */
@@ -187,22 +219,7 @@ nav ul li a:hover {
 .cta p {
     font-size: 18px;
     margin-bottom: 30px;
-}
-
-.btn-alt {
-    background-color: #fff;
-    color: #2e7d32;
-    border: none;
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.btn-alt:hover {
-    background-color: #e8f5e9;
+    opacity: 0.9;
 }
 
 /* Rodapé */
@@ -214,15 +231,31 @@ footer {
     font-size: 14px;
 }
 
-/* Responsividade Básica */
-@media(max-width: 768px) {
+/* Responsividade (Telas menores e Celulares) */
+@media (max-width: 768px) {
     header .container {
         flex-direction: column;
+        padding: 15px 0;
     }
+    
     nav ul {
         margin-top: 15px;
+        justify-content: center;
     }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+
     .hero-content h2 {
         font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .about, .pillars, .cta {
+        padding: 60px 0;
     }
 }
