@@ -4,96 +4,238 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte, Futuro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <style>
+        /* PALETA DE CORES (Gradiente de Verde Escuro a Verde Claro)
+           Verde Escuro: #1b4332
+           Verde Médio:  #2d6a4f
+           Verde Folha:  #40916c
+           Verde Claro:  #74c69d
+           Fundo Suave:  #f4f9f4
+        */
 
-    <header>
-        <div class="interface">
-            <div class="logo">
-                <h1>Agro<span>Sustentável</span></h1>
-            </div>
-            <nav class="menu-desktop">
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#pilares">Pilares</a></li>
-                    <li><a href="#sobre">O Equilíbrio</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="btn-contato">
-                <a href="#contato"><button>Faça Parte</button></a>
-            </div>
-        </div>
-    </header>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    <section class="hero" id="inicio">
-        <div class="interface">
-            <div class="txt-hero">
-                <h2>AGRO FORTE,<br>FUTURO SUSTENTÁVEL.</h2>
-                <p>O equilíbrio perfeito entre a alta produtividade no campo e a preservação do meio ambiente. A tecnologia trabalhando lado a lado com a natureza.</p>
-                <a href="#pilares" class="btn-saiba-mais">Saiba Mais <i class="fa-solid fa-arrow-down"></i></a>
-            </div>
-        </div>
-    </section>
+        body {
+            background-color: #f4f9f4;
+            color: #1b4332;
+            line-height: 1.6;
+        }
 
-    <section class="pilares" id="pilares">
-        <div class="interface">
-            <h2 class="titulo">Nossos <span>Pilares.</span></h2>
-            <div class="flex-pilares">
-                <div class="pilar-box">
-                    <i class="fa-solid fa-seedling"></i>
-                    <h3>Produção Consciente</h3>
-                    <p>Uso de técnicas como a rotação de culturas e o plantio direto, que protegem o solo e aumentam o rendimento da safra.</p>
-                </div>
-                <div class="pilar-box">
-                    <i class="fa-solid fa-droplet"></i>
-                    <h3>Gestão de Recursos</h3>
-                    <p>Sistemas inteligentes de irrigação gota a gota e captação de água da chuva para reduzir o desperdício ao mínimo.</p>
-                </div>
-                <div class="pilar-box">
-                    <i class="fa-solid fa-solar-panel"></i>
-                    <h3>Tecnologia Verde</h3>
-                    <p>Uso de bioinsumos e fontes de energia renovável, como a solar e a biomassa, no dia a dia das fazendas do futuro.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #1b4332, #2d6a4f);
+            color: #ffffff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-    <section class="sobre" id="sobre">
-        <div class="interface">
-            <div class="flex-sobre">
-                <div class="img-sobre">
-                    <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&q=80&w=600" alt="Tecnologia no Campo">
-                </div>
-                <div class="txt-sobre">
-                    <h2>Alimentar o mundo <span>protegendo o planeta.</span></h2>
-                    <p>O grande desafio do século XXI é garantir a segurança alimentar de uma população em crescimento sem esgotar nossos recursos naturais. O agro forte de hoje entende que a sustentabilidade não é um obstáculo, mas sim a única garantia de continuidade do negócio.</p>
-                    <p>Através da agricultura de precisão, drones e monitoramento via satélite, conseguimos aplicar o insumo certo, na quantidade certa e no lugar certo, reduzindo drasticamente o impacto ambiental.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    <section class="contato" id="contato">
-        <div class="interface">
-            <h2 class="titulo">Una-se ao <span>Movimento.</span></h2>
-            <form id="form-contato">
-                <input type="text" placeholder="Seu Nome Completo" required>
-                <input type="email" placeholder="Seu E-mail" required>
-                <textarea placeholder="Sua Mensagem ou Ideia para o Futuro" required></textarea>
-                <button type="submit">Enviar Mensagem</button>
-            </form>
-        </div>
-    </section>
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-    <footer>
-        <div class="interface">
-            <p>&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        .logo span {
+            color: #74c69d;
+        }
 
-    <script src="script.js"></script>
-</body>
-</html>
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #74c69d;
+        }
+
+        /* Banner Principal (Hero) */
+        .hero {
+            background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(45, 106, 79, 0.85)), 
+                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: #ffffff;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #d8f3dc;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #74c69d;
+            color: #1b4332;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #52b788;
+            transform: translateY(-2px);
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #1b4332;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #40916c;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Sobre / Pilares (Cards) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #2d6a4f;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #2d6a4f;
+            margin-bottom: 15px;
+        }
+
+        /* Seção de Mídia (Vídeo e Imagens) */
+        .media-section {
+            background-color: #e9f5ed;
+            padding: 60px 20px;
+            border-radius: 12px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 200px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(27, 67, 50, 0.9));
+            color: white;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1b4332
