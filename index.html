@@ -4,204 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte, Futuro Sustentável</title>
-    <style>
-        /* Cores baseadas no pedido (Verde Escuro ao Verde Claro) */
-        :root {
-            --verde-escuro: #0b2512;
-            --verde-medio: #1e5631;
-            --verde-folha: #4c9a2a;
-            --verde-claro: #76ba1b;
-            --verde-limao: #a8df65;
-            --fundo-suave: #f4f9f4;
-            --branco: #ffffff;
-        }
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
+    <header>
+        <div class="container-nav">
+            <div class="logo">Agro<span>Forte</span></div>
+            <button class="menu-toggle" id="menu-btn" aria-label="Abrir Menu">☰</button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Pilares</a></li>
+                    <li><a href="#galeria">Mídia</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        body {
-            background-color: var(--fundo-suave);
-            color: var(--verde-escuro);
-            line-height: 1.6;
-        }
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Agro forte, futuro sustentável</h1>
+                <p>O equilíbrio perfeito entre a potência da produção no campo e a preservação do meio ambiente.</p>
+                <a href="#sobre" class="btn-conhecer">Conhecer Práticas</a>
+            </div>
+        </section>
 
-        /* Topo do Site */
-        header {
-            background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
-            color: var(--branco);
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
+        <section id="sobre" class="secao">
+            <h2 class="titulo-secao">Pilares do Amanhã</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">🌱</div>
+                    <h3>Tecnologia Verde</h3>
+                    <p>Uso de maquinários inteligentes e sensores de precisão que evitam o desperdício de água e insumos no solo.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌳</div>
+                    <h3>Preservação Ativa</h3>
+                    <p>Cuidado e reflorestamento de áreas nativas dentro das propriedades rurais, mantendo a biodiversidade viva.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">☀️</div>
+                    <h3>Energia Limpa</h3>
+                    <p>Implementação de painéis solares e reaproveitamento de resíduos orgânicos para geração de energia limpa.</p>
+                </div>
+            </div>
+        </section>
 
-        .container-nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+        <section id="galeria" class="conteudo-midia">
+            <h2 class="titulo-secao">O Campo em Ação</h2>
+            
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vídeo demonstrativo sobre Agro" allowfullscreen></iframe>
+            </div>
 
-        .logo {
-            font-size: 1.6rem;
-            font-weight: bold;
-        }
+            <div class="galeria-fotos">
+                <div class="foto-item">
+                    <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=500&q=80" alt="Florestas densas">
+                    <div class="legenda">Matas e Reservas Nativas</div>
+                </div>
+                <div class="foto-item">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad451?auto=format&fit=crop&w=500&q=80" alt="Plantação de soja">
+                    <div class="legenda">Cultivos de Alta Performance</div>
+                </div>
+                <div class="foto-item">
+                    <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=500&q=80" alt="Brotos verdes">
+                    <div class="legenda">Sustentabilidade desde o Início</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        .logo span {
-            color: var(--verde-limao);
-        }
+    <footer id="contato">
+        <h3>Agro Forte, Futuro Sustentável</h3>
+        <p>Cultivando o amanhã, hoje. &copy; 2026</p>
+    </footer>
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: var(--branco);
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--verde-limao);
-        }
-
-        /* Banner Principal */
-        .hero {
-            background: linear-gradient(rgba(11, 37, 18, 0.8), rgba(30, 86, 49, 0.7)), 
-                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-            color: var(--branco);
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-
-        /* Seções de Conteúdo */
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .titulo-secao {
-            text-align: center;
-            font-size: 2.2rem;
-            color: var(--verde-escuro);
-            margin-bottom: 40px;
-        }
-
-        /* Cards/Pilares */
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--branco);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--verde-folha);
-        }
-
-        .card h3 {
-            color: var(--verde-medio);
-            margin-bottom: 15px;
-        }
-
-        /* Área de Vídeo e Galeria */
-        .conteudo-midia {
-            background-color: #eaf4ec;
-            padding: 60px 20px;
-            border-radius: 15px;
-            margin: 40px auto;
-        }
-
-        .video-box {
-            max-width: 800px;
-            margin: 0 auto 50px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            /* Mantém a proporção do vídeo de cinema */
-            aspect-ratio: 16/9; 
-        }
-
-        .video-box iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .galeria-fotos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .foto-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 220px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .foto-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-        }
-
-        .foto-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .legenda {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            background: linear-gradient(transparent, var(--verde-escuro));
-            color: var(--branco);
-            padding: 15px;
-            font-size: 1rem;
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: var(--verde-escuro);
-            color: var(--branco);
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-        }
-
-        footer p {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
+    <script src="script.js"></script>
+</body>
+</html>
