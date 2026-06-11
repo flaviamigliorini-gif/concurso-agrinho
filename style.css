@@ -1,4 +1,15 @@
-/* Configurações Gerais e Reset */
+/* Variáveis de Cores (Gradiente do Verde Escuro ao Verde Claro) */
+:root {
+    --verde-escuro: #0f2e1b;
+    --verde-medio: #1f5e39;
+    --verde-folha: #388e57;
+    --verde-claro: #66bb6a;
+    --verde-limao: #a5d6a7;
+    --fundo-suave: #f1f7f3;
+    --branco: #ffffff;
+}
+
+/* Configurações Globais */
 * {
     margin: 0;
     padding: 0;
@@ -8,45 +19,36 @@
 }
 
 body {
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    padding-top: 80px; /* Evita que o topo do conteúdo fique escondido sob o menu fixo */
+    background-color: var(--fundo-suave);
+    color: var(--verde-escuro);
 }
 
-.container {
-    width: 90%;
+/* Menu de Navegação */
+header {
+    background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+    color: var(--branco);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.container-nav {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-/* Cabeçalho / Menu Fixo */
-header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
-
-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
 }
 
-.logo h1 {
-    font-size: 24px;
-    color: #2e7d32; /* Verde Agro */
-    font-weight: 700;
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
-.logo h1 span {
-    color: #81c784; /* Verde Claro */
+.logo span {
+    color: var(--verde-limao);
 }
 
 nav ul {
@@ -59,203 +61,189 @@ nav ul li {
 }
 
 nav ul li a {
+    color: var(--branco);
     text-decoration: none;
-    color: #555;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #2e7d32;
+    color: var(--verde-limao);
 }
 
-/* Banner Principal (Hero) */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1470') no-repeat center center/cover;
-    height: calc(100vh - 80px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    padding: 0 20px;
-}
-
-.hero-content h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.hero-content p {
-    font-size: 20px;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Botões */
-.btn {
-    display: inline-block;
-    background-color: #2e7d32;
-    color: #fff;
-    padding: 12px 35px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #1b5e20;
-}
-
-.btn-alt {
-    background-color: #fff;
-    color: #2e7d32;
+.menu-toggle {
+    display: none;
+    background: none;
     border: none;
-    padding: 12px 35px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
+    color: var(--branco);
+    font-size: 1.8rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-alt:hover {
-    background-color: #e8f5e9;
-    transform: scale(1.02);
-}
-
-/* Seção Sobre */
-.about {
-    padding: 80px 0;
-    background-color: #fff;
+/* Banner Hero */
+.hero {
+    background: linear-gradient(rgba(15, 46, 27, 0.85), rgba(31, 94, 57, 0.75)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    color: var(--branco);
+    padding: 120px 20px;
     text-align: center;
 }
 
-.about h2 {
-    font-size: 36px;
-    color: #2e7d32;
-    margin-bottom: 5px;
-}
-
-.subtitle {
-    color: #777;
-    margin-bottom: 40px;
-    font-style: italic;
-    font-size: 16px;
-}
-
-.about-text {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 18px;
-    color: #555;
-}
-
-.about-text p {
+.hero h1 {
+    font-size: 3.2rem;
     margin-bottom: 20px;
 }
 
-/* Seção Pilares */
-.pillars {
-    padding: 80px 0;
-    background-color: #f1f8e9;
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.btn-conhecer {
+    background-color: var(--verde-claro);
+    color: var(--verde-escuro);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-conhecer:hover {
+    background-color: var(--branco);
+    color: var(--verde-medio);
+}
+
+/* Seções e Cards */
+.secao {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-secao {
     text-align: center;
-}
-
-.pillars h2 {
-    font-size: 36px;
-    color: #2e7d32;
+    font-size: 2.5rem;
     margin-bottom: 50px;
+    position: relative;
 }
 
-.pillars-grid {
+.cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .card {
-    background: #fff;
+    background: var(--branco);
     padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-    color: #33691e;
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-
-.card p {
-    color: #666;
-    font-size: 15px;
-}
-
-/* Chamada para Ação (CTA) */
-.cta {
-    background-color: #2e7d32;
-    color: #fff;
-    padding: 80px 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--verde-folha);
     text-align: center;
 }
 
-.cta h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
-.cta p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    opacity: 0.9;
+/* Mídia e Galeria */
+.conteudo-midia {
+    background-color: #e2ede5;
+    padding: 80px 20px;
+}
+
+.video-box {
+    max-width: 850px;
+    margin: 0 auto 50px;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.galeria-fotos {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.foto-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.foto-item:hover img {
+    transform: scale(1.1);
+}
+
+.legenda {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(transparent, var(--verde-escuro));
+    color: var(--branco);
+    padding: 20px;
 }
 
 /* Rodapé */
 footer {
-    background-color: #1b5e20;
-    color: #a5d6a7;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
     text-align: center;
-    padding: 30px 0;
-    font-size: 14px;
+    padding: 40px 20px;
 }
 
-/* Responsividade (Telas menores e Celulares) */
+/* Responsividade (Celular) */
 @media (max-width: 768px) {
-    header .container {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    .container-nav {
         flex-direction: column;
-        padding: 15px 0;
+        align-items: flex-start;
+        gap: 15px;
     }
-    
+
     nav ul {
-        margin-top: 15px;
-        justify-content: center;
+        flex-direction: column;
+        width: 100%;
     }
-    
+
     nav ul li {
-        margin: 0 10px;
+        margin: 10px 0;
     }
 
-    .hero-content h2 {
-        font-size: 32px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-    
-    .about, .pillars, .cta {
-        padding: 60px 0;
+    .hero h1 {
+        font-size: 2.2rem;
     }
 }
